@@ -32,6 +32,9 @@ namespace P02_StudentsConsoleApp
                     case "3":
                         result = EditCountryName();
                         break;
+                    case "4":
+                        result = RemoveCountry();
+                        break;
                     default:
                         result = "Not supported command!";
                         break;
@@ -50,6 +53,7 @@ namespace P02_StudentsConsoleApp
             sb.AppendLine("1: Add Country");
             sb.AppendLine("2: Country List");
             sb.AppendLine("3: Change country name");
+            sb.AppendLine("4: Remove country");
             sb.Append("Enter command");
             Console.WriteLine(sb.ToString().TrimEnd());
         }
@@ -65,9 +69,18 @@ namespace P02_StudentsConsoleApp
         {
             Console.Write("Enter country id: ");
             int id = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter country new name: ");
+            Console.Write("Enter country new name: ");
             string newName = Console.ReadLine();
             return countryService.EditCountryNameById(id,newName);
+        }
+
+        public string RemoveCountry()
+        {
+            Console.Write("Enter country id: ");
+            int id = int.Parse(Console.ReadLine());
+            Console.Write("Enter country name: ");
+            string removedName = Console.ReadLine();
+            return countryService.RemoveCountry(id,removedName);
         }
     }
 }

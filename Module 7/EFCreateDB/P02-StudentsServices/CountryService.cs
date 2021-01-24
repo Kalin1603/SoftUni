@@ -58,17 +58,30 @@ namespace P02_StudentsServices
             }
         }
 
+        public string RemoveCountry(int id,string removedName)
+        {
+            Country country = GetCountryById(id);
+            if (country != null)
+            {
+                country.Name = removedName;
+                dbContext.Countries.Remove(country);
+                dbContext.SaveChanges();
+                return $"Country with id: {id} and Name {removedName} is removed!";
+            }
+            else
+            {
+                return $"Country with id: {id} not found!";
+            }
+        }
 
         public Country GetCountryById(int id)
         {
             return this.dbContext.Countries.FirstOrDefault(x => x.Id == id);
         }
 
-
         public Country GetCountryByName(string name)
         {
             return this.dbContext.Countries.FirstOrDefault(x => x.Name == name);
-        }
-        
+        }      
     }
 }
