@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace P02_StudentsConsoleApp
+﻿namespace P02_StudentsConsoleApp
 {
-  public  class Program
+    public class Program
     {
         static void Main()
         {

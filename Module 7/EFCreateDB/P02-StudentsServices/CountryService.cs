@@ -1,13 +1,21 @@
-﻿using P02_StudentsAppData.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace P02_StudentsServices
+﻿namespace P02_StudentsServices
 {
-   public class CountryService : BaseServices
+    using P02_StudentsAppData;
+    using P02_StudentsAppData.Models;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+
+    public class CountryService 
     {
+        private readonly ApplicationDbContext dbContext;
+
+        public CountryService(ApplicationDbContext dbContext)
+        {
+            this.dbContext = dbContext;
+        }
+
         public string AddCountry(string name)
         {
             Country country = GetCountryByName(name);
@@ -30,6 +38,7 @@ namespace P02_StudentsServices
         {
             StringBuilder sb = new StringBuilder();
             List<Country> countries = dbContext.Countries.ToList();
+            sb.AppendLine(">> Countries list");
             sb.AppendLine(new string('-', 30));
             sb.AppendLine($"{"Id",3} | {"Name",10}");
             sb.AppendLine(new string('-', 30));
@@ -66,7 +75,7 @@ namespace P02_StudentsServices
                 country.Name = removedName;
                 dbContext.Countries.Remove(country);
                 dbContext.SaveChanges();
-                return $"Country with id: {id} and Name {removedName} is removed!";
+                return $"Country with id: {id} and Name: {removedName} is removed!";
             }
             else
             {

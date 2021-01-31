@@ -24,6 +24,7 @@ namespace P02_StudentsAppData
             {
                 optionsBuilder.UseSqlServer(ConnectionString);
             }
+            optionsBuilder.UseLazyLoadingProxies();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
