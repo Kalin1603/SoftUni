@@ -15,10 +15,15 @@
         }
 
         public virtual DbSet<BuildingType> BuildingTypes { get; set; }
+
         public virtual DbSet<District> Districts { get; set; }
+
         public virtual DbSet<Property> Properties { get; set; }
+
         public virtual DbSet<PropertyType> PropertyTypes { get; set; }
+
         public virtual DbSet<Tag> Tags { get; set; }
+
         public virtual DbSet<TagProperty> TagsProperties { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
