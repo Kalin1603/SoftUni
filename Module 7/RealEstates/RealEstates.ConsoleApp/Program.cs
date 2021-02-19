@@ -9,7 +9,7 @@
         public static void Main()
         {
             ApplicationDbContext applicationDbContext = new ApplicationDbContext();
-            PropertiesService propertiesService = new Services.PropertiesService(applicationDbContext);
+            PropertiesService propertiesService = new PropertiesService(applicationDbContext);
             Engine engine = new Engine(propertiesService);
             engine.Run();
         }
