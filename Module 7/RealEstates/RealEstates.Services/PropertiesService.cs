@@ -3,11 +3,12 @@
     using RealEstates.Data;
     using RealEstates.Data.Models;
     using RealEstates.Services.Models;
+    using RealEstates.ViewModels;
     using System;
     using System.Collections.Generic;
     using System.Linq;
 
-    public class PropertiesService
+    public class PropertiesService : IPropertiesService
     {
         private readonly ApplicationDbContext db;
 

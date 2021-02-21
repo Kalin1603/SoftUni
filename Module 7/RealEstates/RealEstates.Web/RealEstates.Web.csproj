@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RealEstates.Data\RealEstates.Data.csproj" />
-    <ProjectReference Include="..\RealEstates.ViewModels\RealEstates.ViewModels.csproj" />
+    <ProjectReference Include="..\RealEstates.Services\RealEstates.Services.csproj" />
   </ItemGroup>
 
 </Project>

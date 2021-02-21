@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\RealEstates.Data\RealEstates.Data.csproj" />
     <ProjectReference Include="..\RealEstates.Services\RealEstates.Services.csproj" />
+    <ProjectReference Include="..\RealEstates.ViewModels\RealEstates.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

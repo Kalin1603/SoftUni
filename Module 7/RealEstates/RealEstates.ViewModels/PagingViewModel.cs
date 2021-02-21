@@ -1,7 +1,7 @@
-﻿namespace RealEstates.Services.Models
-{
-    using System;
+﻿using System;
 
+namespace RealEstates.ViewModels
+{
     public class PagingViewModel
     {
         public PagingViewModel()
